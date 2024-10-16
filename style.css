@@ -1,0 +1,260 @@
+/* General reset */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: linear-gradient(135deg, #1a1a1a, #4e4e4e);
+	background-size: 300% 300%;
+	animation: gradient-animation 8s ease infinite;
+	font-family: "Arial", sans-serif;
+	color: #fff;
+	padding: 20px;
+}
+
+/* Background animation */
+@keyframes gradient-animation {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+/* Container animation */
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.container {
+	width: 100%;
+	max-width: 500px;
+	background: rgba(0, 0, 0, 0.8);
+	border-radius: 15px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+	padding: 30px;
+	text-align: center;
+	backdrop-filter: blur(15px);
+	animation: fadeIn 1s ease forwards;
+}
+
+h2 {
+	font-size: 26px;
+	margin-bottom: 20px;
+	text-shadow: 0 2px 5px rgba(255, 255, 255, 0.3);
+}
+
+.password-display {
+	font-size: 18px;
+	padding: 15px;
+	border-radius: 8px;
+	margin: 20px 0;
+	background-color: rgba(255, 255, 255, 0.1);
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	transition: background 0.3s ease, transform 0.1s ease;
+	cursor: pointer;
+}
+
+.copy-btn {
+	padding: 8px 12px;
+	font-size: 16px;
+	background: #4a90e2;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-left: 10px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.copy-btn:hover {
+	background: #5ab1e6;
+	transform: translateY(-2px);
+}
+
+.pass-length {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+}
+
+/* Range slider styling */
+input[type="range"] {
+	-webkit-appearance: none; /* Override default appearance */
+	appearance: none; /* Override default appearance */
+	width: 100%;
+	height: 8px; /* Height of the track */
+	border-radius: 5px; /* Rounded track */
+	background: rgba(255, 255, 255, 0.2); /* Track color */
+	outline: none; /* Remove outline */
+	margin: 15px 0; /* Margin for spacing */
+}
+
+/* Track styling */
+input[type="range"]::-webkit-slider-runnable-track {
+	background: rgba(255, 255, 255, 0.2); /* Track color */
+	border-radius: 5px; /* Rounded track */
+}
+
+input[type="range"]::-moz-range-track {
+	background: rgba(255, 255, 255, 0.2); /* Track color for Firefox */
+	border-radius: 5px; /* Rounded track */
+}
+
+/* Thumb styling */
+input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none; /* Override default appearance */
+	appearance: none; /* Override default appearance */
+	width: 20px; /* Thumb width */
+	height: 20px; /* Thumb height */
+	border-radius: 50%; /* Circular thumb */
+	background: #4a90e2; /* Thumb color */
+	cursor: pointer; /* Pointer on hover */
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
+input[type="range"]::-moz-range-thumb {
+	width: 20px; /* Thumb width for Firefox */
+	height: 20px; /* Thumb height for Firefox */
+	border-radius: 50%; /* Circular thumb */
+	background: #4a90e2; /* Thumb color */
+	cursor: pointer; /* Pointer on hover */
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
+/* Hover effect for the thumb */
+input[type="range"]:hover::-webkit-slider-thumb {
+	background: #5ab1e6; /* Lighter thumb color on hover */
+}
+
+input[type="range"]:hover::-moz-range-thumb {
+	background: #5ab1e6; /* Lighter thumb color on hover */
+}
+
+/* Active effect for the thumb */
+input[type="range"]:active::-webkit-slider-thumb {
+	background: #6a11cb; /* Darker thumb color when active */
+}
+
+input[type="range"]:active::-moz-range-thumb {
+	background: #6a11cb; /* Darker thumb color when active */
+}
+
+/* Focus effect */
+input[type="range"]:focus {
+	outline: none; /* Remove outline */
+}
+
+/* Options styles */
+.options {
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+	justify-content: center;
+}
+
+/* Custom checkbox styling */
+.options input[type="checkbox"] {
+	display: none;
+}
+
+.options input[type="checkbox"] + span {
+	position: relative;
+	display: flex;
+	align-items: center;
+	padding: 10px;
+	cursor: pointer;
+	color: #fff;
+}
+
+.options input[type="checkbox"] + span::before {
+	content: "";
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin-right: 8px;
+	border: 2px solid #4a90e2;
+	border-radius: 4px;
+	background: rgba(255, 255, 255, 0.1);
+	transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.options input[type="checkbox"]:checked + span::before {
+	background-color: #4a90e2;
+	border-color: #4a90e2;
+}
+
+.options input[type="checkbox"] + span::after {
+	content: "✔";
+	color: #ffffff;
+	font-size: 14px;
+	position: absolute;
+	opacity: 0;
+	left: 10%;
+	top: 26%;
+	transform: translate(-50%, -50%) scale(0);
+	transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.options input[type="checkbox"]:checked + span::after {
+	opacity: 1;
+	transform: scale(1);
+}
+
+/* Generate button styling */
+.generate-btn {
+	padding: 12px;
+	font-size: 18px;
+	background: linear-gradient(135deg, #6a11cb, #2575fc);
+	color: #fff;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	width: 100%;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+	transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.generate-btn:hover {
+	transform: translateY(-2px);
+	background: linear-gradient(135deg, #2575fc, #6a11cb);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive styles */
+@media (max-width: 500px) {
+	h2 {
+		font-size: 22px;
+	}
+	.password-display {
+		font-size: 16px;
+	}
+	.options input[type="number"] {
+		font-size: 14px;
+	}
+	.generate-btn {
+		font-size: 16px;
+	}
+}
